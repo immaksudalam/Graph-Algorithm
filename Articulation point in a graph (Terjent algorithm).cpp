@@ -34,8 +34,9 @@ int dfs(int src)
             }
             else if(low[v] >= visit_time[src]){ // 2nd case of articulation point.
                 articulationPoint.push_back(src+1);
+               }
                 low[src] = min(low[src], low[v]);
-            }
+            
         }
         else if(v != parent[src]){ //Back edge
             low[src] = min(low[src], visit_time[v]);
